@@ -1,0 +1,1 @@
+<? header("location:http://localhost/tinyvc/home"); ?>

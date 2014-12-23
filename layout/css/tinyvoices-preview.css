@@ -1,0 +1,25 @@
+  .voice-preview{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding-top:30px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:20px;
+   -webkit-box-shadow: 2px 6px 11px 2px rgba(108, 122, 137,0.2);
+ -moz-box-shadow: 2px 6px 11px 2px rgba(108, 122, 137,0.2);
+ box-shadow: 2px 6px 11px 2px rgba(108, 122, 137,0.2);
+ margin-bottom:20px;
+  }
+  
+  .complaint-cover-title{
+  margin-top:10px;  
+  }
+  
+  .voice-confirm{
+  margin-top:5px;
+  padding:1em;
+  
+  margin-top:-20px;
+  }
+  
