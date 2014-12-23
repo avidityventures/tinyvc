@@ -1,1 +1,4 @@
-<? header("location:http://localhost/tinyvc/home"); ?>
+<?
+include("system_files/lib/global.php");
+header("location:".SERVER_URL."home");
+?>
