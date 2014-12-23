@@ -118,36 +118,91 @@ $profile_details=$util->setSession();
 <style>
 body{background-color:#f7f7f7;}
 
+
+
 .maincatBox-1{
-  background:url(http://freefoodphotos.com/imagelibrary/vegetables/slides/roast_vegetables.jpg) center center; background-size: 100%;
-  height:200px;
-  color:#fff;
-  margin-bottom:10px;
-}
+  background:url(<?=SERVER_URL?>layout/img/general/cat-1.png) no-repeat center center; background-size: 100%;
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  margin-bottom:20px;
+ }
 
 .maincatBox-2{
-  background-color:#00B16A;
-  height:200px;
-  padding:55px;
-  color:#fff;
-  margin-bottom:10px;
+  background:url(<?=SERVER_URL?>layout/img/general/cat-2.jpg) no-repeat center center; background-size: 100%;
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  margin-bottom:20px;
+  
 
 }
 
 .maincatBox-3{
-  background-color:#F4D03F;
-  height:200px;
-  padding:55px;
-  color:#fff;
-  margin-bottom:10px;
+  background:url(<?=SERVER_URL?>layout/img/general/cat-3.jpg) no-repeat center center; background-size: 100%;
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  margin-bottom:20px;
+ 
 }
+
+
+.maincatBox-4{
+  background:url(<?=SERVER_URL?>layout/img/general/cat-4.jpg) no-repeat center center; background-size: 100%;
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  margin-bottom:20px;
+
+}
+
+
+.maincatBox-5{
+  background:url(<?=SERVER_URL?>layout/img/general/cat-5.png) no-repeat center center; background-size: 100%;
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  margin-bottom:20px;
+
+}
+
 
 .title-box{
 
- padding:0;
- width:100%;
- padding:50px;
- font-size:40px;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #404040;
+    -webkit-font-smoothing: antialiased;
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+
+.box-description {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  background-color: rgba(255,255,255,1);
+  text-transform: uppercase;
+  margin: 20px;
+
 }
 </style>
 
@@ -157,24 +212,53 @@ body{background-color:#f7f7f7;}
 
 <div style="margin-bottom: 50px;">
 <div class="col-lg-6">
-<div class="maincatBox-1 text-center">
-  <div class="col-lg-12 title-box">Food Premises</div>
+<div class="maincatBox-1 text-left">
+  <div class="box-description">
+   <div class="col-lg-12 title-box text-center">Food & Beverages</div>
+  </div>
 </div><!--maincatBox-->
 </div>
 
 <div class="col-lg-3">
-<div class="maincatBox-2 text-center">
-  <h1>Telcos</h1>
+<div class="maincatBox-2">
+  <div class="box-description">
+    <div class="col-lg-12 title-box text-center">Products</div>
+  </div>
 </div><!--maincatBox-->
 </div>
 
 
 <div class="col-lg-3">
-<div class="maincatBox-3 text-center">
-  <h1>Food</h1>
+<div class="maincatBox-3">
+  <div class="box-description">
+    <div class="col-lg-12 title-box text-center">Services</div>
+  </div>
 </div><!--maincatBox-->
 </div>
+
+<div class="col-lg-12" style="margin-top:10px;"></div>
+<div class="clearfix"></div>
+
+<div class="col-lg-6">
+<div class="maincatBox-4">
+  <div class="box-description">
+    <div class="col-lg-12 title-box text-center">Telco</div>
+  </div>
+</div><!--maincatBox-->
 </div>
+
+
+
+<div class="col-lg-6">
+<div class="maincatBox-5">
+  <div class="box-description">
+    <div class="col-lg-12 title-box text-center">Trending Voices</div>
+  </div>
+</div><!--maincatBox-->
+</div>
+
+
+
 <div class="clearfix"></div>
 
 
