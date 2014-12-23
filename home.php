@@ -77,6 +77,7 @@ $profile_details=$util->setSession();
     <!-- Bootstrap core CSS -->
     <link href="<?=SERVER_URL?>layout/css/main.css" rel="stylesheet"/>
     <link href="<?=SERVER_URL?>layout/css/tinyvoices.css" rel="stylesheet"/>
+    <link href="<?=SERVER_URL?>layout/css/tinyvoices-home.css" rel="stylesheet"/>
     <link href='<?=SERVER_URL?>layout/css/font-awesome.css' rel='stylesheet'/>
 
     <!-- Custom styles for this template -->
@@ -114,97 +115,6 @@ $profile_details=$util->setSession();
 
       </div><!--container text-center-->
     </div>
-
-<style>
-body{background-color:#f7f7f7;}
-
-
-
-.maincatBox-1{
-  background:url(<?=SERVER_URL?>layout/img/general/cat-1.png) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 240px;
-  margin-bottom:20px;
- }
-
-.maincatBox-2{
-  background:url(<?=SERVER_URL?>layout/img/general/cat-2.jpg) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 240px;
-  margin-bottom:20px;
-  
-
-}
-
-.maincatBox-3{
-  background:url(<?=SERVER_URL?>layout/img/general/cat-3.jpg) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 240px;
-  margin-bottom:20px;
- 
-}
-
-
-.maincatBox-4{
-  background:url(<?=SERVER_URL?>layout/img/general/cat-4.jpg) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 240px;
-  margin-bottom:20px;
-
-}
-
-
-.maincatBox-5{
-  background:url(<?=SERVER_URL?>layout/img/general/cat-5.png) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 240px;
-  margin-bottom:20px;
-
-}
-
-
-.title-box{
-
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 27px;
-    color: #404040;
-    -webkit-font-smoothing: antialiased;
-    margin-top:10px;
-    margin-bottom:10px;
-
-}
-
-.box-description {
-  display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  background-color: rgba(255,255,255,1);
-  text-transform: uppercase;
-  margin: 20px;
-
-}
-</style>
 
 <div class="container">
 <div class="row">
