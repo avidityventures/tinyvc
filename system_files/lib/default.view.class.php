@@ -23,7 +23,11 @@ public function metaHeader(){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="It\'s about brands and services">
     <meta name="author" content="The TinyVoices App">
-    <title>TinyVoices . A Crowdfunded Opinion Community</title>';
+    <title>TinyVoices . A Crowdfunded Opinion Community</title>
+    <link rel="shortcut icon" href="'.SERVER_URL.'layout/img/general/fav.ico" />
+    <link rel="apple-touch-icon" href="'.SERVER_URL.'layout/img/general/fav.icns"/>
+    ';
+    
 }
 #----------------------------------------------------------------------------------------------------
 # Desc: To get template directory

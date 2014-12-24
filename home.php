@@ -120,69 +120,85 @@ $profile_details=$util->setSession();
 <div class="row">
 
 
+<h1 class="section-title">BY CATEGORIES</h1>
+
 <div style="margin-bottom: 50px;">
-<div class="col-lg-6">
-<div class="maincatBox-1 text-left">
+  
+
+
+<div class="col-sm-12 col-md-12 col-lg-6">
+<a href="#">
+<div class="maincatBox-1">
   <div class="box-description">
    <div class="col-lg-12 title-box text-center">Food & Beverages</div>
   </div>
 </div><!--maincatBox-->
+</a>
 </div>
 
-<div class="col-lg-3">
+
+
+<div class="col-sm-12 col-md-12 col-lg-3">
+<a href="#">
 <div class="maincatBox-2">
   <div class="box-description">
     <div class="col-lg-12 title-box text-center">Products</div>
   </div>
 </div><!--maincatBox-->
+</a>
 </div>
 
 
-<div class="col-lg-3">
+<div class="col-sm-12 col-md-12 col-lg-3">
+<a href="#">  
 <div class="maincatBox-3">
   <div class="box-description">
     <div class="col-lg-12 title-box text-center">Services</div>
   </div>
 </div><!--maincatBox-->
+</a>
 </div>
 
 <div class="col-lg-12" style="margin-top:10px;"></div>
 <div class="clearfix"></div>
 
-<div class="col-lg-6">
+<div class="col-sm-12 col-md-12 col-lg-6">
+<a href="#">  
 <div class="maincatBox-4">
   <div class="box-description">
     <div class="col-lg-12 title-box text-center">Telco</div>
   </div>
 </div><!--maincatBox-->
+</a>
 </div>
 
 
 
-<div class="col-lg-6">
+<div class="col-sm-12 col-md-12 col-lg-6">
+<a href="#">  
 <div class="maincatBox-5">
   <div class="box-description">
     <div class="col-lg-12 title-box text-center">Trending Voices</div>
   </div>
 </div><!--maincatBox-->
+</a>
 </div>
-
+</div>
 
 
 <div class="clearfix"></div>
 
 
 
-<h1 style="margin-left:15px; font-size:28px; margin-bottom:20px;">LATEST VOICES</h1>
+<h1 class="section-title">RECENT VOICES</h1>
 <? $html->voicePosts(); ?>
+
 
 </div><!--row-->
 <? $html->footer(); ?>
 
-<? $html->search(); ?>
-
 </div><!--container-->
-
+<? $html->search(); ?>
 <script>
 var SERVER_URL="<?=SERVER_URL?>";
 </script>

@@ -2,69 +2,90 @@ body{background-color:#f7f7f7;}
 
 .maincatBox-1{
   background:url(../img/general/cat-1.png) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 240px;
   margin-bottom:20px;
  }
+ 
+.maincatBox-1:hover{
+  background:url(../img/general/cat-1-bw.png) no-repeat center center; background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ }
+ 
 
 .maincatBox-2{
   background:url(../img/general/cat-2.jpg) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 240px;
   margin-bottom:20px;
-  
-
 }
+
+.maincatBox-2:hover{
+  background:url(../img/general/cat-2-bw.png) no-repeat center center; background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ }
 
 .maincatBox-3{
   background:url(../img/general/cat-3.jpg) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 240px;
   margin-bottom:20px;
- 
 }
+
+.maincatBox-3:hover{
+  background:url(../img/general/cat-3-bw.png) no-repeat center center; background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ }
 
 
 .maincatBox-4{
   background:url(../img/general/cat-4.jpg) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 240px;
   margin-bottom:20px;
-
 }
+
+.maincatBox-4:hover{
+  background:url(../img/general/cat-4-bw.png) no-repeat center center; background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ }
 
 
 .maincatBox-5{
   background:url(../img/general/cat-5.png) no-repeat center center; background-size: 100%;
-  position: relative;
-  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 240px;
   margin-bottom:20px;
-
 }
 
 
-.title-box{
+.maincatBox-5:hover{
+  background:url(../img/general/cat-5-bw.png) no-repeat center center; background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ }
 
+
+.title-box{
     font-size: 25px;
     font-weight: 400;
     line-height: 27px;
@@ -72,15 +93,20 @@ body{background-color:#f7f7f7;}
     -webkit-font-smoothing: antialiased;
     margin-top:10px;
     margin-bottom:10px;
-
 }
 
 .box-description {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255,255,255,0.8);
   text-transform: uppercase;
   margin: 20px;
-
 }
+
+.section-title{
+margin-left:20px;
+font-size:28px;
+margin-bottom:20px;    
+}
+
