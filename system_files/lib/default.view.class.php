@@ -395,7 +395,7 @@ echo '
 # Desc: To show voices record post
 #----------------------------------------------------------------------------------------------------
 public function voicePosts($uniqID=null,$mode=null){
-global $db,$util,$noBottomHR;
+global $db,$util,$noBottomHR,$category_code;
 
         if ($uniqID==null){
          #-----------------------------
@@ -404,6 +404,20 @@ global $db,$util,$noBottomHR;
           if ($mode=="edit"){
           $profile_details=$util->setSession(); 
           $voicesGet=$db->db_query("select * from voices where id='".$profile_details->id."' order by uid desc");
+          }elseif ($mode=="categories"){
+          
+          $sql="select A.uid,A.id,A.feelings,A.brands_services,A.problems_complaints,A.url_expander,A.url_media,
+                       A.url_type,A.foursquare_id,A.countrycode,A.address,A.locationLat,A.locationLong,A.category,A.category_icon,
+                       A.publish,A.fb_post_id,A.twit_post_id,A.datetime,A.uniqueidentifier from
+                voices A, categories B, categories_child C
+                  where
+                publish='1' and
+                C.parent_category_id='".escape_string($category_code)."' and
+                A.category=C.category_id and
+                C.parent_category_id=B.category_id
+                order by uid desc LIMIT 20";
+                
+          $voicesGet=$db->db_query($sql); 
           }elseif ($mode==null){
           $voicesGet=$db->db_query("select * from voices where publish='1' order by uid desc LIMIT 20"); 
           }

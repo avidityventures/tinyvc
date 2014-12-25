@@ -68,7 +68,7 @@ if (strlen($foursquare_id) >0){
 $fsDetails="https://api.foursquare.com/v2/venues/".$foursquare_id."?client_id=Q4EYGAQKVBB3PE55L2KPDBOZVVCIYRPJ4BZXELADAQZW45LG&client_secret=X5JF2RIKSVGYAFPI4IWWPDZ4YNKH540TFEOBK35HYAV2U3NA&v=20141208";
 $fsDetails_e=file_get_contents($fsDetails);
 $rs=json_decode($fsDetails_e, true);
-$categoryName=$rs['response']['venue']['categories'][0]['name'];
+$categoryName=$rs['response']['venue']['categories'][0]['id'];
 $icon_prefix=$rs['response']['venue']['categories'][0]['icon']['prefix'];
 $icon_suffix=$rs['response']['venue']['categories'][0]['icon']['suffix'];
 $categoryIcon=$icon_prefix."bg_64".$icon_suffix;

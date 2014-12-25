@@ -20,6 +20,7 @@ $db=new connection();
 $db->db_conn();
 $util=new util();
 $html=new defaultsite();
+$util->authAuthorized();
 
 require 'system_files/modules/facebook/facebook.php';
 require_once('system_files/modules/twitter/twitteroauth/twitteroauth.php');
@@ -35,11 +36,11 @@ if ($user) {
 #---------------------------------------------------------------------
 # Proceed knowing you have a logged in user who's authenticated.
 #---------------------------------------------------------------------
-    $profile = $facebook->api('/me');
+    $profile = $facebook->api('/me');  
 
     $util->checkUsers("facebook");
     $rs=$util->setSession();
-
+   
   } catch (FacebookApiException $e) {
     error_log($e);
     $user = null;
@@ -67,18 +68,18 @@ switch ($connection->http_code) {
 }
 #---------------------------------------------------------------------
 $profile_details=$util->setSession();
-
+$mode="categories";
+$category_code=$_REQUEST['v'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <? $html->metaHeader(); ?>
-
+    
     <!-- Bootstrap core CSS -->
     <link href="<?=SERVER_URL?>layout/css/main.css" rel="stylesheet"/>
     <link href="<?=SERVER_URL?>layout/css/tinyvoices.css" rel="stylesheet"/>
-    <link href="<?=SERVER_URL?>layout/css/tinyvoices-home.css" rel="stylesheet"/>
-    <link href='<?=SERVER_URL?>layout/css/font-awesome.css' rel='stylesheet'/>
+    <link href='<?=SERVER_URL?>layout/css/font-awesome.css' rel='stylesheet'/>  
 
     <!-- Custom styles for this template -->
     <link href="<?=SERVER_URL?>layout/css/navbar-static-top.css" rel="stylesheet">
@@ -90,122 +91,34 @@ $profile_details=$util->setSession();
   </head>
 
   <body>
-  <? $html->header(); ?>
+  <? $html->header(); ?> 
 
-    <div class="jumbotron">
-      <div class="container text-center">
-        <h5 class="mainSliderSlogan">A Crowdfunded Opinion Community That Solves Problems</h5>
-        <h1 class="mainSliderSloganLg">Broadcast insightful conversation</h1>
-        <h3 class="mainSliderLongDesc">Where people <u>vent</u> about brands and services that needs improvement</h3>
-
-        <div class="mainSliderBtn">
-         <? if (!isset($_SESSION['authorized'])){ ?>
-         <a href="<?=$loginUrl?>" type="button" class="btn btn-primary btn-lg facebookBG"><div class="socialActions"><i class="fa fa-facebook"></i> Facebook </div></a>
-         <? } ?>
-         <? if (isset($_SESSION['authorized'])){ ?>
-         <a href="<?=SERVER_URL?>voice" type="button" class="btn btn-primary btn-lg tinyVoicesBtnBG"><div class="socialActions"><i class="fa fa-comment"></i> Start a Conversation </div></a>
-         <? }else{ ?>
-         <a href="#" type="button" data-toggle="modal" data-target="#loginOptions" class="btn btn-primary btn-lg tinyVoicesBtnBG"><div class="socialActions"><i class="fa fa-comment"></i> Start a Conversation </div></a>
-         <? } ?>
-
-         <? if (!isset($_SESSION['authorized'])){ ?>
-         <a href="<?=$twitLoginUrl?>" type="button" class="btn btn-primary btn-lg twitterBG"><div class="socialActions"><i class="fa fa-twitter"></i> Twitter </div></a>
-         <? } ?>
-        </div><!--mainSliderBtn-->
-
-      </div><!--container text-center-->
-    </div>
-
-<div class="container">
-<div class="row">
-
-
-<h1 class="section-title">BY CATEGORIES</h1>
-
-<div style="margin-bottom: 50px;">
   
+<style>body{background-color:#f7f7f7;}</style>    
 
 
-<div class="col-sm-12 col-md-12 col-lg-6">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06374d81259">
-<div class="maincatBox-1">
-  <div class="box-description">
-   <div class="col-lg-12 title-box text-center">Food & Beverages</div>
-  </div>
-</div><!--maincatBox-->
-</a>
-</div>
+    
+<div class="container" style="margin-top:60px;">  
+<div class="row">
+<div class="col-md-12"><h1 style="margin-bottom:20px; font-family:Lato; font-weight:300;">My Voices <img src="<?=SERVER_URL?>layout/img/logo/big-smiley.png" width="50" style="margin-top:-10px; margin-left:15px;"></h1></div>
 
 
 
-<div class="col-sm-12 col-md-12 col-lg-3">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06374d81259">
-<div class="maincatBox-2">
-  <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Products</div>
-  </div>
-</div><!--maincatBox-->
-</a>
-</div>
-
-
-<div class="col-sm-12 col-md-12 col-lg-3">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06378d81259">
-<div class="maincatBox-3">
-  <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Services</div>
-  </div>
-</div><!--maincatBox-->
-</a>
-</div>
-
-<div class="col-lg-12" style="margin-top:10px;"></div>
-<div class="clearfix"></div>
-
-<div class="col-sm-12 col-md-12 col-lg-6">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06375d81259">
-<div class="maincatBox-4">
-  <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Professional Bodies</div>
-  </div>
-</div><!--maincatBox-->
-</a>
-</div>
-
-
-
-<div class="col-sm-12 col-md-12 col-lg-6">
-<a href="<?=SERVER_URL?>categories?v=trending-voices">
-<div class="maincatBox-5">
-  <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Trending Voices</div>
-  </div>
-</div><!--maincatBox-->
-</a>
-</div>
-</div>
-
-
-<div class="clearfix"></div>
-
-
-
-<h1 class="section-title">RECENT VOICES</h1>
-<? $html->voicePosts(); ?>
-
+<? $html->voicePosts(null,$mode); ?>
 
 </div><!--row-->
 <? $html->footer(); ?>
 
-</div><!--container-->
 <? $html->search(); ?>
+
+</div><!--container-->
+
 <script>
 var SERVER_URL="<?=SERVER_URL?>";
 </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="<?=SERVER_URL?>layout/js/utilities.js"></script>
-    <script src="<?=SERVER_URL?>layout/js/tinyvoices.js"></script>
-
+    <script src="<?=SERVER_URL?>layout/js/utilities.js"></script>
+    <script src="<?=SERVER_URL?>layout/js/tinyvoices.js"></script>    
   </body>
 </html>
