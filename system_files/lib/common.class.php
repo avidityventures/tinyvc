@@ -603,5 +603,30 @@ if(eregi("youtu",$url) or eregi("youtube",$url)){
 return $returns;
 }
 
+
+function categories($type){
+
+if ($type=="food"){
+ $array=array("Cafe",
+              "Restaurant",
+              "American Restaurant",
+              "Fried Chicken Joint",
+              "African Restaurant",
+              "Middle Eastern Restaurant",
+              "Indonesian Restaurant",
+              "Halal Restaurant",
+              "Hainan Restaurant",
+              "Chinese Restaurant"
+              "Coffee Shop",
+              "Café",
+              
+              );
+} 
+ 
+}
+
+
+
+
 } #End Class
 ?>

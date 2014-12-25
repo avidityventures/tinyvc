@@ -9,7 +9,7 @@ body{background-color:#f7f7f7;}
   margin-bottom:20px;
  }
  
-.maincatBox-1:hover{
+.maincatBox-1:hover,.maincatBox-1:focus{
   background:url(../img/general/cat-1-bw.png) no-repeat center center; background-size: 100%;
   background-size: cover;
   background-position: center center;
@@ -26,7 +26,7 @@ body{background-color:#f7f7f7;}
   margin-bottom:20px;
 }
 
-.maincatBox-2:hover{
+.maincatBox-2:hover,.maincatBox-2:focus{
   background:url(../img/general/cat-2-bw.png) no-repeat center center; background-size: 100%;
   background-size: cover;
   background-position: center center;
@@ -42,7 +42,7 @@ body{background-color:#f7f7f7;}
   margin-bottom:20px;
 }
 
-.maincatBox-3:hover{
+.maincatBox-3:hover,.maincatBox-3:focus{
   background:url(../img/general/cat-3-bw.png) no-repeat center center; background-size: 100%;
   background-size: cover;
   background-position: center center;
@@ -59,7 +59,7 @@ body{background-color:#f7f7f7;}
   margin-bottom:20px;
 }
 
-.maincatBox-4:hover{
+.maincatBox-4:hover,.maincatBox-4:focus{
   background:url(../img/general/cat-4-bw.png) no-repeat center center; background-size: 100%;
   background-size: cover;
   background-position: center center;
@@ -77,7 +77,7 @@ body{background-color:#f7f7f7;}
 }
 
 
-.maincatBox-5:hover{
+.maincatBox-5:hover,.maincatBox-5:focus{
   background:url(../img/general/cat-5-bw.png) no-repeat center center; background-size: 100%;
   background-size: cover;
   background-position: center center;
