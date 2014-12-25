@@ -616,7 +616,7 @@ if ($type=="food"){
               "Indonesian Restaurant",
               "Halal Restaurant",
               "Hainan Restaurant",
-              "Chinese Restaurant"
+              "Chinese Restaurant",
               "Coffee Shop",
               "Café",
               
