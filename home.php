@@ -67,7 +67,11 @@ switch ($connection->http_code) {
 }
 #---------------------------------------------------------------------
 $profile_details=$util->setSession();
-
+$cat1="4d4b7105d754a06374d81259";
+$cat2="4d4b7105d754a06379d81259";
+$cat3="4d4b7105d754a06375d81259";
+$cat4="4d4b7105d754a06378d81259";
+$cat5="";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +131,7 @@ $profile_details=$util->setSession();
 
 
 <div class="col-sm-12 col-md-12 col-lg-6">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06374d81259">
+<a href="<?=SERVER_URL?>categories?v=<?=$cat1?>">
 <div class="maincatBox-1">
   <div class="box-description">
    <div class="col-lg-12 title-box text-center">Food & Beverages</div>
@@ -139,10 +143,10 @@ $profile_details=$util->setSession();
 
 
 <div class="col-sm-12 col-md-12 col-lg-3">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06374d81259">
+<a href="<?=SERVER_URL?>categories?v=<?=$cat2?>">
 <div class="maincatBox-2">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Products</div>
+    <div class="col-lg-12 title-box text-center">Travels</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -150,10 +154,10 @@ $profile_details=$util->setSession();
 
 
 <div class="col-sm-12 col-md-12 col-lg-3">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06378d81259">
+<a href="<?=SERVER_URL?>categories?v=<?=$cat3?>">
 <div class="maincatBox-3">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Services</div>
+    <div class="col-lg-12 title-box text-center">Government</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -163,10 +167,10 @@ $profile_details=$util->setSession();
 <div class="clearfix"></div>
 
 <div class="col-sm-12 col-md-12 col-lg-6">
-<a href="<?=SERVER_URL?>categories?v=4d4b7105d754a06375d81259">
+<a href="<?=SERVER_URL?>categories?v=<?=$cat4?>">
 <div class="maincatBox-4">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Professional Bodies</div>
+    <div class="col-lg-12 title-box text-center">Products & Services</div>
   </div>
 </div><!--maincatBox-->
 </a>

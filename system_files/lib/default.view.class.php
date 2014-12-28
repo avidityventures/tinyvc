@@ -415,7 +415,7 @@ global $db,$util,$noBottomHR,$category_code;
                 C.parent_category_id='".escape_string($category_code)."' and
                 A.category=C.category_id and
                 C.parent_category_id=B.category_id
-                order by uid desc LIMIT 20";
+                order by A.uid desc LIMIT 20";
                 
           $voicesGet=$db->db_query($sql); 
           }elseif ($mode==null){

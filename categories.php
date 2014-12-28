@@ -20,7 +20,6 @@ $db=new connection();
 $db->db_conn();
 $util=new util();
 $html=new defaultsite();
-$util->authAuthorized();
 
 require 'system_files/modules/facebook/facebook.php';
 require_once('system_files/modules/twitter/twitteroauth/twitteroauth.php');
@@ -67,9 +66,18 @@ switch ($connection->http_code) {
     //echo 'Could not connect to Twitter. Refresh the page or try again later.';
 }
 #---------------------------------------------------------------------
-$profile_details=$util->setSession();
+
 $mode="categories";
 $category_code=$_REQUEST['v'];
+$cat="select B.category
+             from
+      categories B, categories_child C
+        where
+      C.parent_category_id='".escape_string($category_code)."' and
+      C.parent_category_id=B.category_id
+      LIMIT 1";
+$cat_q=$db->db_query($cat);
+$cat_e=$db->db_fetch_array($cat_q);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +108,7 @@ $category_code=$_REQUEST['v'];
     
 <div class="container" style="margin-top:60px;">  
 <div class="row">
-<div class="col-md-12"><h1 style="margin-bottom:20px; font-family:Lato; font-weight:300;">My Voices <img src="<?=SERVER_URL?>layout/img/logo/big-smiley.png" width="50" style="margin-top:-10px; margin-left:15px;"></h1></div>
+<div class="col-md-12"><h1 style="margin-bottom:20px; font-family:Lato; font-weight:300;"><?=$cat_e->category?></h1></div>
 
 
 
