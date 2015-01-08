@@ -128,7 +128,7 @@ font-weight:200;
 background: url(../img/background/tinyBG2.png) no-repeat center top fixed;
 color:#fff;
 padding-top:150px;
-padding-bottom:100px;
+padding-bottom:80px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -142,6 +142,8 @@ background-color:#f3f3f3;
 padding-top:100px;
 padding-bottom:50px;
 }
+
+
 
 .fb-social-share{
 margin-top:10px; padding-top:10px;  
@@ -852,7 +854,8 @@ margin-bottom:20px;
 .footer{
 border-top:1px dotted #c2c2c2;
 margin-top:20px;
-padding-bottom:20px;    
+padding-bottom:20px;
+padding-left:10px;
 }
 
 .modal-backdrop.in {
@@ -1328,8 +1331,11 @@ bottom:0;
 padding-bottom:10px;
 font-size:24px;
 color: #06a89d;
-
-
+line-height: 1;
+margin-bottom:10px;
+height:28px;
+overflow-y: hidden;
+overflow-x: hidden;
 }
 
 .complaint-title-link{

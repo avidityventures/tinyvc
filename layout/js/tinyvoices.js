@@ -24,16 +24,18 @@ $(function () {
             $(this).removeClass('open');
         }
     });
-    
-   
+
+  
     $('form').submit(function(event) {
         event.preventDefault();
         return false;
     })
-    
+
 });
 
-
+$("#searchformsubmit").click(function() {
+    $('#searchform').submit();
+});
 
 
 
@@ -71,6 +73,11 @@ $("form[name='form-profile']").on('submit', function(e){
 
         e.preventDefault();
     });
+
+
+
+
+
 
 
 $("form[name='form-share-social']").on('submit', function(e){

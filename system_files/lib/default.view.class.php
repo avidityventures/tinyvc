@@ -242,8 +242,11 @@ echo '  <div class="col-md-3">
 public function search(){
 echo '
 <div id="search">
-    <form>
-        <input type="search" value="" placeholder="Search Keywords..." />
+    <form id="searchform" action="'.SERVER_URL.'search">
+     <input name="find" type="search"  placeholder="Search Keywords..." autocomplete="off"/>
+     <button type="button" name="submit" class="btn btn-primary btn-lg  tinyVoicesBtnRegister" id="searchformsubmit">
+         <div class="socialActions">Search Keywords</div>
+     </button>  
     </form>
 </div><!--search-->';
 }
@@ -467,7 +470,7 @@ global $db,$util,$noBottomHR,$category_code;
                  if ($voice->url_type=="video"){
                   $img=$voice->url_media;
                 
-                 }if ($voice->url_type=="image"){
+                 }if ($voice->url_type=="image"){ 
                   $img=$voice->url_media;
                  
                  }else{
@@ -481,11 +484,11 @@ global $db,$util,$noBottomHR,$category_code;
        
        
        
-       if ($uniqID==null){
+       if ($uniqID==null){ 
        $class="col-lg-4 col-md-6 col-sm-12 col-xs-12";
        $class2="complaint-box-main voice-post-box-".trim($voice->uniqueidentifier)."";
        $class3="complaint-box-contents";
-       $brandsTitle=substr($voice->brands_services,0,20);
+       $brandsTitle=$voice->brands_services;
        }else{
        $class="col-md-12";
        $class2="complaint-box-main-inside";
@@ -502,6 +505,7 @@ $countryFullName=$util->getCountry($users->country);
   $cityFullName=null;  
  }
 
+ $cleanURLSEO=$util->cleanURL($brandsTitle);
        
 echo '
 <div class="'.$class.'">
@@ -510,7 +514,7 @@ echo '
  if ($uniqID==null){
   echo'<div class="complaint-cover "  style="background: url(\''.$img.'\') center center; background-size: 100%;">
        
-       <a href="'.SERVER_URL.'voice-view?v='.$voice->uniqueidentifier.'">
+       <a href="'.SERVER_URL.'voice-view?q='.$cleanURLSEO.'&v='.$voice->uniqueidentifier.'">
        <div class="complaint-user">';
        if ($mode=="edit"){
         if ($voice->publish==1){
@@ -542,7 +546,7 @@ echo '
  
 echo '
 <div class="'.$class3.'">
-<div class="complaint-cover-title"><a href="'.SERVER_URL.'voice-view?v='.$voice->uniqueidentifier.'" class="complaint-title-link">'.$brandsTitle.'</a></div>';
+<div class="complaint-cover-title"><a href="'.SERVER_URL.'voice-view?q='.$cleanURLSEO.'&v='.$voice->uniqueidentifier.'" class="complaint-title-link">'.$brandsTitle.'</a></div>';
 if (strlen($voice->address) >1){
 echo '<div class="complaint-cover-location">'.$voice->address.'&nbsp;</div>';
 $setMinHeightContents=null;
@@ -578,6 +582,7 @@ $setMinHeightContents='style="min-height:95px"';
   if ($uniqID!=null){                
    echo "<div class='timeline-time'>";
    echo $newDate = date("l jS, F Y", strtotime($voice->datetime));
+   
    echo "</div>";
   }
 
@@ -754,7 +759,7 @@ echo '</div><!--complaint-box-contents--></div><!--complaint-box-main--></div><!
 #----------------------------------------------------------------------------------------------------
 public function footer($type=0){
 
-$str= '<div class="containerx footer"><br>&copy; 2014 TinyVoices. All Rights Reserved </div>';
+$str= '<div class="containerx footer"><br>&copy; 2015 TinyVoices. All Rights Reserved </div>';
  if ($type==0){
   echo $str;
  }else{

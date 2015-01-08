@@ -71,7 +71,6 @@ $cat1="4d4b7105d754a06374d81259";
 $cat2="4d4b7105d754a06379d81259";
 $cat3="4d4b7105d754a06375d81259";
 $cat4="4d4b7105d754a06378d81259";
-$cat5="";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,7 +133,7 @@ $cat5="";
 <a href="<?=SERVER_URL?>categories?v=<?=$cat1?>">
 <div class="maincatBox-1">
   <div class="box-description">
-   <div class="col-lg-12 title-box text-center">Food & Beverages</div>
+   <div class="col-lg-12 title-box">Food & Beverages</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -146,7 +145,7 @@ $cat5="";
 <a href="<?=SERVER_URL?>categories?v=<?=$cat2?>">
 <div class="maincatBox-2">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Travels</div>
+    <div class="col-lg-12 title-box">Travels</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -157,7 +156,7 @@ $cat5="";
 <a href="<?=SERVER_URL?>categories?v=<?=$cat3?>">
 <div class="maincatBox-3">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Government</div>
+    <div class="col-lg-12 title-box">Professional</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -170,7 +169,7 @@ $cat5="";
 <a href="<?=SERVER_URL?>categories?v=<?=$cat4?>">
 <div class="maincatBox-4">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Products & Services</div>
+    <div class="col-lg-12 title-box">Products & Services</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -182,7 +181,7 @@ $cat5="";
 <a href="<?=SERVER_URL?>categories?v=trending-voices">
 <div class="maincatBox-5">
   <div class="box-description">
-    <div class="col-lg-12 title-box text-center">Trending Voices</div>
+    <div class="col-lg-12 title-box">Trending Voices</div>
   </div>
 </div><!--maincatBox-->
 </a>
@@ -198,10 +197,44 @@ $cat5="";
 <? $html->voicePosts(); ?>
 
 
+
+
+
+
 </div><!--row-->
-<? $html->footer(); ?>
+
 
 </div><!--container-->
+
+<div class="jumbotron-categories">
+<div class="container">
+<h2 class="text-center">Feeling unhappy about a service or brand</h2>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+
+<p class="text-center">
+Felt that you are being short-changed by the company or services ? Voice it out here and be heard. Have a conversation with the brands you engaged with and get their feedbacks. This is a crowdfunded opinion community platform.
+</p>
+
+<center>
+  <? if (isset($_SESSION['authorized'])){ ?>
+  <a href="<?=SERVER_URL?>voice" type="button" class="btn btn-primary btn-lg tinyVoicesBtnBG"><div class="socialActions"><i class="fa fa-comment"></i> Start a Conversation </div></a>
+  <? }else{ ?>
+  <a href="#" type="button" data-toggle="modal" data-target="#loginOptions" class="btn btn-primary btn-lg tinyVoicesBtnBG"><div class="socialActions"><i class="fa fa-comment"></i> Start a Conversation </div></a>
+  <? } ?>
+</center>
+</div>
+<div class="col-md-3"></div>  
+</div><!--container-->
+</div><!--jumbotron-categories-->
+
+<div class="container">
+<div class="row">
+<? $html->footer(); ?>
+</div>
+</div>
+
+
 <? $html->search(); ?>
 <script>
 var SERVER_URL="<?=SERVER_URL?>";

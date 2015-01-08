@@ -579,8 +579,9 @@ return $returns;
 }
 
 } 
-
-
+#---------------------------------------------------------------------------------------------------- 
+# Function to expand media URL
+#----------------------------------------------------------------------------------------------------
 function expandURL($url,$width="100%",$height="280"){
 $returns = "";
 if(!empty($url)){
@@ -601,6 +602,17 @@ if(eregi("youtu",$url) or eregi("youtube",$url)){
 }
 }
 return $returns;
+}
+#---------------------------------------------------------------------------------------------------- 
+# Function to clean the URL
+#----------------------------------------------------------------------------------------------------
+function cleanURL($str, $delimiter='-') {
+setlocale(LC_ALL, 'en_US.UTF8');
+	$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+	$clean = preg_replace("/[^a-zA-Z0-9\/_|+ -]/", '', $clean);
+	$clean = strtolower(trim($clean, '-'));
+	$clean = preg_replace("/[\/_|+ -]+/", $delimiter, $clean);
+	return $clean;
 }
 
 
